@@ -1,6 +1,14 @@
 require("dotenv").config();
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+// Removed duplicate declaration of genAI
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+const prompt = "Explain how AI works";
+
+const result = await model.generateContent(prompt);
+console.log(result.response.text());
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 async function generateWorkoutPlan(userData) {
