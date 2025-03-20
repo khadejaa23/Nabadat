@@ -4,11 +4,18 @@ const mongoose = require("mongoose");
 const session = require("cookie-session");
 const passport = require("passport");
 const cors = require("cors");
-require("./auth/passport"); // استيراد إعدادات المصادقة
+require("./auth/passport"); 
 const workoutRoutes = require("./routes/workoutRoutes");
 const mealRoutes = require("./routes/mealRoutes");
 
 const app = express();
+const i18n = require("./config/i18n");
+
+app.use(i18n.init);
+
+app.get("/", (req, res) => {
+  res.send(req.__("messages.welcome"));
+});
 
 // إعداد الجلسات
 app.use(

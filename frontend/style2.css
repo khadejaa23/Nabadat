@@ -1,7 +1,13 @@
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: "Tajawal", sans-serif;
+    /* خط مناسب للعربية */
+}
 
 
 .small-box {
-    
+
     width: 70%;
     height: 20px;
     background-color: #b7bec0;
@@ -12,59 +18,65 @@
 
 
 }
+
 .container {
     display: flex;
     flex-direction: column;
-    
+
     min-height: 300px;
 }
+
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
-    
+
+
+
     background-color: #ffcccb;
     height: 620px;
-    background-color: rgba(12, 2, 21, 0.929); 
-   
-    
+    background-color: rgba(12, 2, 21, 0.929);
+
+
 }
-h1{
+
+h1 {
     color: rgb(41, 161, 41);
-    
-    position: sticky; 
+
+    position: sticky;
     text-align: right;
     padding-right: 20px;
     padding-top: -20px;
-    
+
 }
-p{
-    
-    
+
+p {
+
+
     padding-inline: 100px;
     position: relative;
     top: -75px;
     left: -150px;
-    
 
-    
+
+
 }
-.div1{
+
+.div1 {
     font-size: 60px;
     text-align: center;
     color: rgb(123, 23, 66);
     position: fixed;
-    top:260px;
-    
-   padding-left: 30px;
+    top: 260px;
+
+    padding-left: 30px;
 }
-input{
+
+input {
     width: 540px;
     position: fixed;
-    top:555px; 
-    height: 40px; 
+    top: 555px;
+    height: 40px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -72,15 +84,16 @@ input{
     color: black;
     font-size: 20px;
 }
-.img1{
+
+.img1 {
     width: 70px;
     height: 70px;
-   position: fixed;
-   left: 350px;
+    position: fixed;
+    left: 350px;
 
 }
 
-.b2{
+.b2 {
     width: 42px;
     height: 42px;
     background-image: url("telegram.png");
@@ -90,4 +103,8 @@ input{
     top: 559px;
     border-radius: 10px;
 }
-#response { margin-top: 20px; font-weight: bold; }
+
+#response {
+    margin-top: 20px;
+    font-weight: bold;
+}

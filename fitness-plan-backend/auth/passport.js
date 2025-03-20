@@ -1,5 +1,5 @@
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+import passport from "passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 
 passport.use(
   new GoogleStrategy(
@@ -8,17 +8,21 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "/auth/google/callback",
     },
-    (accessToken, refreshToken, profile, done) => {
+    (profile, done) => {
+      // Pass the profile to the done callback
       return done(null, profile);
     }
   )
 );
 
-// تخزين بيانات المستخدم في الجلسة
+// Store user data in the session
 passport.serializeUser((user, done) => {
   done(null, user);
 });
 
+// Retrieve user data from the session
 passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
+
+export default passport;
