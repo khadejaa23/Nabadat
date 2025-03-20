@@ -11,7 +11,9 @@ router.post("/", async (req, res) => {
 router.get("/:userId", async (req, res) => {
   try {
     const plan = await WorkoutPlan.findOne({ userId: req.params.userId });
-    if (!plan) return res.status(404).json({ error: "⚠️ لم يتم العثور على خطة رياضية" });
+    if (!plan) {
+      return res.status(404).json({ error: "⚠️ لم يتم العثور على خطة رياضية" });
+    }
 
     res.json(plan);
   } catch (err) {
@@ -21,6 +23,7 @@ router.get("/:userId", async (req, res) => {
 const express = require("express");
 const router = express.Router();
 const { generateWorkoutPlan } = require("../services/geminiService");
+const WorkoutPlan = require("../models/WorkoutPlan");
 
 // إنشاء خطة رياضية باستخدام Gemini API
 router.post("/generate", async (req, res) => {
@@ -32,12 +35,6 @@ router.post("/generate", async (req, res) => {
     res.status(500).json({ error: "❌ حدث خطأ أثناء إنشاء الخطة الرياضية" });
   }
 });
-
-module.exports = router;
-
-const express = require("express");
-const router = express.Router();
-const WorkoutPlan = require("../models/WorkoutPlan");
 
 // حفظ خطة رياضية جديدة
 router.post("/", async (req, res) => {
