@@ -33,8 +33,7 @@ SESSION_SECRET=<your-session-secret>
 GEMINI_API_KEY=<your-gemini-api-key>
 ```
 4. Start the backend server:
-``` npm start
-```
+``npm start ``
 #### Usage
 Fitness Plans: Use the AI-powered feature to generate workout plans based on your input.
 Meal Plans: Create meal plans and manage shopping lists for missing ingredients.
